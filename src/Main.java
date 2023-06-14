@@ -1,17 +1,52 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
+import java.io.IOException;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        while (true) {
+            System.out.println("----------- DICTIONARY APP -----------");
+            System.out.println("1. Tìm kiếm theo Slang word.");
+            System.out.println("2. Tìm kiếm theo Definition.");
+            System.out.println("3. Add một Slang word mới.");
+            System.out.println("4. Edit một Slang word.");
+            System.out.println("5. Delete một Slang word");
+            System.out.println("6. Reset danh sách Slang words gốc.");
+            System.out.println("7. Random một Slang word.");
+            System.out.println("8. Đố vui S.");
+            System.out.println("9. Đố vui D.");
+            System.out.println("0. Thoát.");
+            System.out.print("Chọn: ");
+            int choice = scanner.nextInt();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+            switch (choice) {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 0:
+                    System.out.println("Thoát...");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Chọn sai. Vui lòng chọn lại.");
+            }
         }
     }
 }
