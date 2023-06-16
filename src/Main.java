@@ -1,6 +1,5 @@
-import java.util.Scanner;
-import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class Main {
             System.out.println("8. Đố vui S.");
             System.out.println("9. Đố vui D.");
             System.out.println("0. Thoát.");
-            System.out.print("Chọn: ");
+            System.out.print("Chọn chức năng: ");
             int choice = scanner.nextInt();
 
             switch (choice) {
