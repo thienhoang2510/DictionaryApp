@@ -1,0 +1,54 @@
+import java.util.*;
+import java.io.*;
+
+public class Menu {
+    public static void main(String[] args) throws IOException {
+        SlangWordService sw = new SlangWordService();
+        Scanner scanner = new Scanner(System.in);
+        sw.loadSlangWordsFromFile();
+
+        while (true) {
+            System.out.println("\n----- Dictionary App -----");
+            System.out.println("1. Search by SlangWord:");
+            System.out.println("2. Search by Definition:");
+            System.out.println("3. Show History:");
+            System.out.println("4. Add new SlangWord:");
+            System.out.println("5. Edit SlangWord:");
+            System.out.println("6. Delete SlangWord:");
+            System.out.println("7. Reset SlangWord:");
+            System.out.println("8. Random SlangWord:");
+            System.out.println("9. Quiz - Guess the SlangWord:");
+            System.out.println("10. Quiz - Guess the Definition:");
+            System.out.println("0. Exit.");
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            switch (choice) {
+                case 1:
+                    sw.searchBySlangWord();
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 0:
+                    break;
+                default:
+                    System.exit(0);
+            }
+        }
+    }
+}
