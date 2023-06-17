@@ -29,11 +29,23 @@ public class SlangWordService {
         if (map.containsKey(slangWord)) {
             String definition = map.get(slangWord);
             System.out.println("Definition: " + definition);
+            addToHistory(slangWord);
         } else {
             System.out.println("Slang word not found!");
         }
         System.out.print("Press enter to return to Menu.");
         scanner.nextLine();
     }
-
+    public void showHistory() {
+        System.out.println("Search History:");
+        for (Object item : history) {
+            System.out.println(item);
+        }
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
+    }
+    public void addToHistory(String slangWord) {
+        String item = slangWord;
+        history.add(item);
+    }
 }
