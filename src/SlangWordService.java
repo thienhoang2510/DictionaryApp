@@ -63,6 +63,22 @@ public class SlangWordService {
         System.out.print("Press enter to return to Menu!!!");
         scanner.nextLine();
     }
+    public void addNewSlangWord() {
+        System.out.print("Enter the slang word: ");
+        String slangWord = scanner.nextLine().trim().toLowerCase();
+
+        if (map.containsKey(slangWord)) {
+            System.out.println("Slang word already exists.");
+            System.out.println("Add failed!");
+        } else {
+            System.out.print("Enter the definition: ");
+            String definition = scanner.nextLine().trim();
+            map.put(slangWord, definition);
+            System.out.println("Slang word added successfully.");
+        }
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
+    }
     public void addToHistory(String slangWord) {
         String item = slangWord;
         history.add(item);

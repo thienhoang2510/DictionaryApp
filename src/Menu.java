@@ -33,6 +33,7 @@ public class Menu {
                     sw.showHistory();
                     break;
                 case 4:
+                    sw.addNewSlangWord();
                     break;
                 case 5:
                     break;
