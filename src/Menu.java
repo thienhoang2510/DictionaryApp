@@ -27,6 +27,7 @@ public class Menu {
                     sw.searchBySlangWord();
                     break;
                 case 2:
+                    sw.searchByDefinition();
                     break;
                 case 3:
                     sw.showHistory();
