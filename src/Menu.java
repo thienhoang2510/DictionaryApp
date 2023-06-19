@@ -22,6 +22,7 @@ public class Menu {
             System.out.println("0. Exit.");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     sw.searchBySlangWord();
@@ -36,6 +37,7 @@ public class Menu {
                     sw.addNewSlangWord();
                     break;
                 case 5:
+                    sw.editSlangWord();
                     break;
                 case 6:
                     break;
@@ -48,6 +50,7 @@ public class Menu {
                 case 10:
                     break;
                 case 0:
+                    System.exit(0);
                     break;
                 default:
                     System.exit(0);

@@ -4,6 +4,7 @@ import java.util.*;
 public class SlangWordService {
     Scanner scanner = new Scanner(System.in);
     private static final String slangWordFile = "slang.txt";
+    private static final String slangWordUpdateFile = "slang_update.txt";
     public Map<String, String> map = new HashMap<>();
     public ArrayList<Object> history = new ArrayList<>();
 
@@ -49,7 +50,7 @@ public class SlangWordService {
             }
         }
         if (!found) {
-            System.out.println("No slang words found with definition!");
+            System.out.println("Slang words not found with definition!");
         }
         addToHistory(keyword);
         System.out.print("Press enter to return to Menu!!!");
@@ -75,6 +76,20 @@ public class SlangWordService {
             String definition = scanner.nextLine().trim();
             map.put(slangWord, definition);
             System.out.println("Slang word added successfully.");
+        }
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
+    }
+    public void editSlangWord() {
+        System.out.print("Enter slang word to edit: ");
+        String slangWord = scanner.nextLine().trim().toLowerCase();
+        if (map.containsKey(slangWord)) {
+            System.out.print("Enter the new definition: ");
+            String newDefinition = scanner.nextLine().trim();
+            map.put(slangWord, newDefinition);
+            System.out.println("Edit successfully.");
+        } else {
+            System.out.println("Slang word not found!");
         }
         System.out.print("Press enter to return to Menu!!!");
         scanner.nextLine();
