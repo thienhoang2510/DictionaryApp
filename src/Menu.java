@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("0. Exit.");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();
+
             switch (choice) {
                 case 1:
                     sw.searchBySlangWord();
@@ -40,6 +40,7 @@ public class Menu {
                     sw.editSlangWord();
                     break;
                 case 6:
+                    sw.deleteSlangWord();
                     break;
                 case 7:
                     break;

@@ -26,6 +26,7 @@ public class SlangWordService {
     public void searchBySlangWord() {
         System.out.print("Enter slang word to search: ");
         String slangWord = scanner.nextLine().trim().toLowerCase();
+
         if (map.containsKey(slangWord)) {
             String definition = map.get(slangWord);
             System.out.println("Definition: " + definition);
@@ -40,6 +41,7 @@ public class SlangWordService {
         System.out.print("Enter definition to search: ");
         String keyword = scanner.nextLine().trim().toLowerCase();
         boolean found = false;
+
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String sw = entry.getKey();
             String def = entry.getValue();
@@ -83,11 +85,25 @@ public class SlangWordService {
     public void editSlangWord() {
         System.out.print("Enter slang word to edit: ");
         String slangWord = scanner.nextLine().trim().toLowerCase();
+
         if (map.containsKey(slangWord)) {
             System.out.print("Enter the new definition: ");
             String newDefinition = scanner.nextLine().trim();
             map.put(slangWord, newDefinition);
             System.out.println("Edit successfully.");
+        } else {
+            System.out.println("Slang word not found!");
+        }
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
+    }
+    public void deleteSlangWord() {
+        System.out.print("Enter the slang word to delete: ");
+        String slangWord = scanner.nextLine().trim().toLowerCase();
+
+        if (map.containsKey(slangWord)) {
+            map.remove(slangWord);
+            System.out.println("Delete successfully.");
         } else {
             System.out.println("Slang word not found!");
         }
