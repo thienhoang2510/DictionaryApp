@@ -46,6 +46,7 @@ public class Menu {
                     sw.resetSlangWords();
                     break;
                 case 8:
+                    sw.randomSlangWord();
                     break;
                 case 9:
                     break;

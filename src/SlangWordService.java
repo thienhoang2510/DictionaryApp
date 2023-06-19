@@ -29,7 +29,7 @@ public class SlangWordService {
 
         if (map.containsKey(slangWord)) {
             String definition = map.get(slangWord);
-            System.out.println("Definition: " + definition);
+            System.out.println("[" + slangWord + "] : " + definition);
             addToHistory(slangWord);
         } else {
             System.out.println("Slang word not found!");
@@ -46,7 +46,7 @@ public class SlangWordService {
             String sw = entry.getKey();
             String def = entry.getValue();
             if (def.toLowerCase().contains(keyword)) {
-                System.out.println("[" + sw + "] : [" + def + "]");
+                System.out.println("[" + sw + "] : " + def);
                 found = true;
             }
         }
@@ -110,13 +110,27 @@ public class SlangWordService {
                 System.out.println("Deletion canceled. Slang word not deleted.");
             }
         } else {
-            System.out.println("Slang word not found.");
+            System.out.println("Slang word not found!");
         }
     }
     public void resetSlangWords() throws IOException {
         map.clear();
         loadSlangWordsFromFile();
         System.out.println("Reset successfully.");
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
+    }
+    public void randomSlangWord() {
+        Random random = new Random();
+        List<String> keys = new ArrayList<>(map.keySet());
+        if (!keys.isEmpty()) {
+            String randomSlangWord = keys.get(random.nextInt(keys.size()));
+            String definition = map.get(randomSlangWord);
+            System.out.println("Random Slang Word:");
+            System.out.println("[" + randomSlangWord + "] : " + definition);
+        } else {
+            System.out.println("Slang words not available!");
+        }
         System.out.print("Press enter to return to Menu!!!");
         scanner.nextLine();
     }
