@@ -46,8 +46,7 @@ public class SlangWordService {
             String sw = entry.getKey();
             String def = entry.getValue();
             if (def.toLowerCase().contains(keyword)) {
-                System.out.println("Slang Word: " + sw);
-                System.out.println("Definition: " + def);
+                System.out.println("[" + sw + "] : [" + def + "]");
                 found = true;
             }
         }
@@ -67,7 +66,7 @@ public class SlangWordService {
         scanner.nextLine();
     }
     public void addNewSlangWord() {
-        System.out.print("Enter the slang word: ");
+        System.out.print("Enter slang word to add: ");
         String slangWord = scanner.nextLine().trim().toLowerCase();
 
         if (map.containsKey(slangWord)) {
@@ -87,7 +86,7 @@ public class SlangWordService {
         String slangWord = scanner.nextLine().trim().toLowerCase();
 
         if (map.containsKey(slangWord)) {
-            System.out.print("Enter the new definition: ");
+            System.out.print("Enter new definition: ");
             String newDefinition = scanner.nextLine().trim();
             map.put(slangWord, newDefinition);
             System.out.println("Edit successfully.");
@@ -98,15 +97,26 @@ public class SlangWordService {
         scanner.nextLine();
     }
     public void deleteSlangWord() {
-        System.out.print("Enter the slang word to delete: ");
+        System.out.print("Enter slang word to delete: ");
         String slangWord = scanner.nextLine().trim().toLowerCase();
 
         if (map.containsKey(slangWord)) {
-            map.remove(slangWord);
-            System.out.println("Delete successfully.");
+            System.out.println("Are you sure you want to delete this slang word? (y/n)");
+            String choice = scanner.nextLine().trim().toLowerCase();
+            if (choice.equals("y")) {
+                map.remove(slangWord);
+                System.out.println("Slang word deleted successfully.");
+            } else {
+                System.out.println("Deletion canceled. Slang word not deleted.");
+            }
         } else {
-            System.out.println("Slang word not found!");
+            System.out.println("Slang word not found.");
         }
+    }
+    public void resetSlangWords() throws IOException {
+        map.clear();
+        loadSlangWordsFromFile();
+        System.out.println("Reset successfully.");
         System.out.print("Press enter to return to Menu!!!");
         scanner.nextLine();
     }

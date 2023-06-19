@@ -43,6 +43,7 @@ public class Menu {
                     sw.deleteSlangWord();
                     break;
                 case 7:
+                    sw.resetSlangWords();
                     break;
                 case 8:
                     break;
