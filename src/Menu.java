@@ -49,8 +49,10 @@ public class Menu {
                     sw.randomSlangWord();
                     break;
                 case 9:
+                    sw.slangWordFunQuiz();
                     break;
                 case 10:
+                    sw.definitionFunQuiz();
                     break;
                 case 0:
                     System.exit(0);
