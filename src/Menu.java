@@ -17,8 +17,8 @@ public class Menu {
             System.out.println("6. Delete SlangWord:");
             System.out.println("7. Reset SlangWord:");
             System.out.println("8. Random SlangWord:");
-            System.out.println("9. Quiz - Guess the SlangWord:");
-            System.out.println("10. Quiz - Guess the Definition:");
+            System.out.println("9. Fun quiz - Guess the SlangWord:");
+            System.out.println("10. Fun quiz - Guess the Definition:");
             System.out.println("0. Exit.");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();

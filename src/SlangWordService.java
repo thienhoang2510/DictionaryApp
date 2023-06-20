@@ -23,7 +23,6 @@ public class SlangWordService {
             e.printStackTrace();
         }
     }
-
     public void searchBySlangWord() {
         System.out.print("Enter slang word to search: ");
         String slangWord = scanner.nextLine().trim().toLowerCase();
@@ -205,6 +204,8 @@ public class SlangWordService {
         } else {
             System.out.println("Invalid choice.");
         }
+        System.out.print("Press enter to return to Menu!!!");
+        scanner.nextLine();
     }
     private String[] randomOptionForSlang(List<String> keys, String answer, int numOptions) {
         Random random = new Random();
